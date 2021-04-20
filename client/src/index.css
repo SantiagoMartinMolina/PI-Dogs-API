@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'nunito';
+  background-color: #FAFAFA;
+
+  /* --color: #FF857A; */
+  /* --color1: hsl(100, 25%, 67%); */
+  /* --color: hsl(0, 38%, 68%); */
+
+  /* --color: rgb(255, 163, 147); */
+  --color: rgba(245, 78, 49, 0.712);
+
+  --color2: rgb(238, 240, 179);
+}
+
+input, button, select{
+  font-family: inherit;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
