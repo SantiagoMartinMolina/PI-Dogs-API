@@ -10,7 +10,7 @@ export const StyledFiltro = styled.div`
     padding: 20px;
     /* position: fixed; */
     /* top: 400px; */
-    .container{
+    .filter-container{
         display: flex;
         flex-direction: column;
         /* justify-content: center; */

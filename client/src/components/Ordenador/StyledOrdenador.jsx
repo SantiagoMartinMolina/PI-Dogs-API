@@ -4,13 +4,11 @@ export const StyledOrdenador = styled.form`
     background-color: white;
     border-radius: 5px;
     padding: 20px;
-    /* position: fixed; */
     border: 2px solid var(--color);
     
     div{
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
         margin: auto;
         width: 90%;
 

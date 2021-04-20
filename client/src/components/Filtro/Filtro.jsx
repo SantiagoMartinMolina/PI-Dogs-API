@@ -120,7 +120,7 @@ function Filtro({ setShowNoResult }) {
 
             <h1>Filtrar</h1>
 
-            <div className='container'>
+            <div className='filter-container'>
                 <select onChange={handleChangeTemp} name="temperaments" value={selectedTemp}  >
                     <option value=''>Seleccionar temperamentos</option>
                     {

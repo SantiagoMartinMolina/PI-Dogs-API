@@ -62,7 +62,7 @@ export const StyledModal = styled(motion.div)`
                 flex-wrap: wrap;
                 p{
                     margin: 10px;
-                    background-color: var(--color);
+                    background-color: var(--color3);
                     color: black;
                     padding: 5px 10px;
                     border-radius: 10px;
@@ -88,6 +88,75 @@ export const StyledModal = styled(motion.div)`
 
             background-color: #ffffff;
             cursor: pointer;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .overlay{
+            button{
+                top: 0px;
+                right: 0px;
+            }
+
+            h1{
+            font-size: 45px;
+            }
+            .info{
+                p{
+                    margin: 10px 20px;
+                    font-size: 24px;
+                }
+
+            }
+            .temperaments{
+                
+                .temp-title{
+                    font-size: 24px;
+                }
+
+                div{
+                    
+                    p{
+                        margin: 5px;
+                        font-size: 14px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 430px) {
+        .overlay{
+            padding: 15px;
+            h1{
+                font-size: 35px;
+            }
+
+            .info{
+                justify-content: space-around;
+                p{
+                    margin: 5px 15px;
+                    font-size: 20px;
+                }
+
+            }
+
+            .temperaments{
+                
+                .temp-title{
+                    font-size: 20px;
+                }
+
+                div{
+                    
+                    p{
+                        
+                        font-size: 14px;
+
+                    }
+                }
+            }
         }
     }
     

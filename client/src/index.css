@@ -13,9 +13,11 @@ body {
   /* --color: hsl(0, 38%, 68%); */
 
   /* --color: rgb(255, 163, 147); */
-  --color: rgba(245, 78, 49, 0.712);
+  --color: rgb(245, 127, 106);
 
   --color2: rgb(238, 240, 179);
+
+  --color3: rgba(245, 78, 49, 0.712);
 }
 
 input, button, select{

@@ -78,7 +78,6 @@ function rootReducer(state = initialState, action) {
     }
   }
   if (action.type === ORDER_DESC) {
-    console.log(action.payload);
     if (action.payload === 'name') {
 
       return {

@@ -8,6 +8,7 @@ import Home from './containers/Home/Home';
 import CreateBreed from './containers/CreateBreed/CreateBreed';
 import { useDispatch } from 'react-redux';
 import { getBreeds, setLoading } from './Redux/Actions/index';
+import About from './containers/About/About';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Navbar />
           <Route exact path='/home' component={Home} />
           <Route exact path='/createBreed' render={() => <CreateBreed />} />
+          <Route exact path='/about' component={About} />
         </Route>
 
       </Switch>

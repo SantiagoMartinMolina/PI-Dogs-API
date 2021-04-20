@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyledHome } from './StyledHome';
 import { useSelector } from "react-redux";
 import Card from '../../components/Card/Card';
@@ -10,11 +10,11 @@ import Modal from '../../components/Modal/Modal';
 // import { useEffect } from 'react';
 
 
-function Home(props) {
+function Home() {
     const [title, setTitle] = useState('');
     const [showNoResult, setShowNoResult] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const [showBreed, setShowBreed] = useState({})
+    const [showBreed, setShowBreed] = useState({});
 
 
     const breedsLoaded = useSelector(state => state.breedsLoaded);
@@ -39,15 +39,16 @@ function Home(props) {
     //         setBreeds(breedsLoaded);
     //     }
     // }, [filteredBreeds, breedsLoaded])
+    const [forcedPage, setForcedPage] = useState(false)
 
-    // useEffect(() => {
-    //     console.log('entro useefect');
-    //     if (pagesVisited !== 0 && title !== '') {
-    //         console.log('entro al if');
+    useEffect(() => {
+        if (title !== '') {
+            setForcedPage(false);
+            setForcedPage(true);
+            setPageNumber(0);
+        }
+    }, [title])
 
-    //         setPageNumber(0)
-    //     }
-    // }, [title, pagesVisited])
 
     function renderCards(array) {
 
@@ -57,6 +58,7 @@ function Home(props) {
         let filtered = array.filter(b => b.name.toLowerCase().includes(title.toLocaleLowerCase()));
 
         const displayBreeds = filtered.slice(pagesVisited, pagesVisited + breedsPerPage);
+
         const pageCount = Math.ceil(filtered.length / breedsPerPage);
 
         function changePage({ selected }) {
@@ -65,6 +67,7 @@ function Home(props) {
         return (
             <>
                 <div className='cards-container'>
+                    {title !== '' && <p>{filtered.length} resultados</p>}
                     {
                         displayBreeds.length > 0
                             ?
@@ -85,6 +88,7 @@ function Home(props) {
                     nextLinkClassName={"nextButton"}
                     disabledClassName={"paginationDisabled"}
                     activeClassName={"paginationActive"}
+                    forcePage={forcedPage ? 0 : null}
                 />
             </>
         )
@@ -93,10 +97,6 @@ function Home(props) {
 
         <StyledHome>
             <Modal showModal={showModal} setShowModal={setShowModal} breed={showBreed} />
-            <div className='buscador'>
-                <Buscador setTitle={setTitle} />
-            </div>
-
             <div className='container'>
                 <div className='filtro'>
 
@@ -105,6 +105,9 @@ function Home(props) {
                 </div>
 
                 <div className='cards'>
+                    <div className='buscador'>
+                        <Buscador setTitle={setTitle} />
+                    </div>
                     {/* {console.log('ESTADO BREEDS', breeds)} */}
 
                     {

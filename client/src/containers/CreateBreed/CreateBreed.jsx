@@ -109,7 +109,7 @@ function CreateBreed() {
             <CreateBreedModal setShowModal={setShowModal} showModal={showModal} />
             <div className='form'>
 
-                <h1>Crear raza:</h1>
+                <h1>Crear raza</h1>
                 <form className='form-top' id='form-top' onSubmit={handleSubmit}>
 
                     <input
@@ -169,7 +169,6 @@ function CreateBreed() {
             {/* <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=632&q=80" alt="" /> */}
 
             <div className='img-container'>
-                <h1>Crear raza</h1>
             </div>
 
 
