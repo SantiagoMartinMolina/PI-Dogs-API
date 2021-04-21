@@ -53,7 +53,6 @@ function Home() {
     }, [title])
 
     useEffect(() => {
-        console.log('holaaa');
         setForcedPage(false);
         setForcedPage(true);
         setPageNumber(0);

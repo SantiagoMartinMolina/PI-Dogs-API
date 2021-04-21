@@ -7,6 +7,7 @@ position: fixed;
 background-color: white;
 top: 0;
 z-index: 10;
+border-bottom: 2px solid var(--color); 
 
 .container{
     margin: auto;
@@ -16,7 +17,6 @@ z-index: 10;
     justify-content: space-between;
     color: black;
     padding: 10px;
-    border-bottom: 2px solid var(--color); 
 
     .social-media{
         margin: 0 15px;
