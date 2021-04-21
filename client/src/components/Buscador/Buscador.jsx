@@ -3,7 +3,7 @@ import { StyledBuscador } from './StyledBuscador';
 import { connect } from 'react-redux';
 import { getBreeds, setLoading } from '../../Redux/Actions';
 
-function Buscador({ getBreeds, setLoading, setTitle }) {
+function Buscador({ setTitle, title }) {
 
 
     function handleChange(event) {
@@ -25,7 +25,8 @@ function Buscador({ getBreeds, setLoading, setTitle }) {
                     id="title"
                     autoComplete="off"
                     onChange={(e) => handleChange(e)}
-                    placeholder='Buscar'
+                    placeholder='Search breed'
+                    value={title}
                 />
 
             </form>

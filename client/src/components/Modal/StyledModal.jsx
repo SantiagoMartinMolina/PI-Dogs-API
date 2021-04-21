@@ -94,8 +94,14 @@ export const StyledModal = styled(motion.div)`
     @media (max-width: 650px) {
         .overlay{
             button{
-                top: 0px;
-                right: 0px;
+                top: 10px;
+                right: 10px;
+                background-color: transparent;
+                border: 0;
+                i{
+                    color: white;
+
+                }
             }
 
             h1{

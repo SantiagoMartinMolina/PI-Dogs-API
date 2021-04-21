@@ -6,10 +6,10 @@ export default function About() {
         <StyledAbout>
             <div className='about'>
                 <h1>PI-Dogs</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci quos ducimus sunt necessitatibus, omnis ipsam deserunt nihil dicta nisi vero aut dolores officia suscipit molestias vitae error consequatur culpa. Harum.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem architecto sapiente eaque assumenda maxime, minus officiis natus quaerat officia velit corporis, expedita dolorem magnam enim voluptas illum unde. Nihil, totam?</p>
+                <p>This project was created as part of my fullstack developer formation, while attending the <a href='https://www.soyhenry.com/' target='_blank' rel='noopener noreferrer'>Henry bootcamp</a>. In order to map all the different breeds, this app consumes data from <a href='https://thedogapi.com/' target='_blank' rel='noopener noreferrer'>the dogs API</a>. It is also possible to create a new dog breed, entering a name, weight, height, life span and temperaments.</p>
+                <p>Any feedback you can provide will be greatly appreciated. Thank you, and don't forget to create your own breed!</p>
             </div>
-            <h1>Tecnologías utilizadas:</h1>
+            <h1 className='tech-title'>Used technologies:</h1>
             <div className='tech-container'>
                 <div>
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="" />
@@ -39,25 +39,21 @@ export default function About() {
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="" />
                     <h1>PostgreSQL</h1>
                 </div>
-                <div>
-                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="" />
-                    <h1>GIT</h1>
-                </div>
             </div>
-            <h1>Contacto</h1>
+            <h1>Contact</h1>
             <div className='social-media'>
 
                 <div>
                     <i class="fab fa-linkedin"></i>
-                    <p>Linkedin</p>
+                    <p><a href="https://www.linkedin.com/in/santiago-molina-dev/" target='_blank' rel='noopener noreferrer'>Linkedin</a></p>
                 </div>
                 <div>
                     <i class="fab fa-github-square"></i>
-                    <p>Github</p>
+                    <p><a href="https://github.com/SantiagoMartinMolina" target='_blank' rel='noopener noreferrer'>Github</a></p>
                 </div>
                 <div>
                     <i class="fab fa-twitter-square"></i>
-                    <p>Twitter</p>
+                    <p><a href="https://twitter.com/santidev7" target='_blank' rel='noopener noreferrer'>Twitter</a></p>
                 </div>
             </div>
             <div className='email'>
@@ -65,7 +61,7 @@ export default function About() {
                     <i class="fas fa-envelope-open-text"></i>
                     <p>E-mail</p>
                 </div>
-                <p>molina.santiago.martin@gmail.com</p>
+                <a href='mailto:molina.santiago.martin@gmail.com' >molina.santiago.martin@gmail.com</a>
             </div>
         </StyledAbout>
     )

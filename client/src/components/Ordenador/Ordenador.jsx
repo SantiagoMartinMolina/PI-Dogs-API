@@ -30,19 +30,19 @@ export default function Ordenador() {
     }
     return (
         <StyledOrdenador onSubmit={handlesubmit}>
-            <h1>Ordenar</h1>
+            <h1>Sort by</h1>
             <div>
 
                 <select onChange={handleChange} value={selectedCat} name="order" >
-                    <option value='name'>alfabetico</option>
-                    <option value='weight'>peso</option>
+                    <option value='name'>Name</option>
+                    <option value='weight'>Weight</option>
                 </select>
 
                 <select onChange={handleChange} name="by" value={selectedOrd} >
-                    <option value='asc'>ascendente</option>
-                    <option value='desc'>descendente</option>
+                    <option value='asc'>Ascending</option>
+                    <option value='desc'>Descending</option>
                 </select>
-                <button type='submit'>Ordenar</button>
+                <button type='submit'>Sort</button>
             </div>
 
         </StyledOrdenador>

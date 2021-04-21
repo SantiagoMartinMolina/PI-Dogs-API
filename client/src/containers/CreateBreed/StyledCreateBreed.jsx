@@ -107,10 +107,35 @@ export const StyledCreateBreed = styled.div`
         background-size: cover;
         width: 50%;
         border-radius: 20px;
+        background-position: center;
+
     }
 
 @media (max-width: 900px){
     margin: 200px auto 30px;
+}
+
+@media (max-width: 650px){
+    flex-direction: column-reverse;
+
+    .form{
+        width: 100%;
+    }
+
+    .img-container{
+        height: 300px;
+        width: 100%;
+        background-position: center;
+    }
+    .form{
+        margin: 10px 0 0;
+
+        .form-top{
+            input, select{
+                width: 100%;
+            }
+        }
+    }
 }
 
     

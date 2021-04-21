@@ -7,10 +7,9 @@ import axios from '../../axios';
 
 
 
-function Filtro({ setShowNoResult }) {
+function Filtro({ setShowNoResult, arrayTemps, setArrayTemps, handleClick }) {
     const [temps, setTemps] = useState([]); //[{id: name:}]
     const [selectedTemp, setSelectedTemp] = useState('');
-    const [arrayTemps, setArrayTemps] = useState([]);
 
     const breeds = useSelector(state => state.breedsLoaded);
     const dispatch = useDispatch();
@@ -45,38 +44,6 @@ function Filtro({ setShowNoResult }) {
     };
 
 
-
-    const handleClick = (ev, empty) => {
-        let filtered = [];
-        setShowNoResult(false);
-
-        if (arrayTemps.length === 0) {
-            // filtered = breeds;
-            dispatch(setFiltered([]));
-            return
-        }
-
-        if (!empty) {
-            breeds.forEach((b) => {
-                let temps = b.temperaments?.map(t => t.name); // ["curious", "active"]
-                for (let i = 0; i < arrayTemps.length; i++) {
-                    if (!temps.includes(arrayTemps[i])) {
-                        return
-                    }
-                }
-                filtered.push(b);
-            })
-
-            if (filtered.length === 0) {
-                setShowNoResult(true);
-            }
-
-        } else {
-            setArrayTemps([]);
-        }
-
-        dispatch(setFiltered(filtered)); //[{}, {}] --> action a redux
-    }
 
     useEffect(() => {
 
@@ -118,11 +85,11 @@ function Filtro({ setShowNoResult }) {
     return (
         <StyledFiltro>
 
-            <h1>Filtrar</h1>
+            <h1>Filter</h1>
 
             <div className='filter-container'>
                 <select onChange={handleChangeTemp} name="temperaments" value={selectedTemp}  >
-                    <option value=''>Seleccionar temperamentos</option>
+                    <option value=''>Select temperaments</option>
                     {
                         temps.map((t, index) => (
 
@@ -142,7 +109,7 @@ function Filtro({ setShowNoResult }) {
                     }
                 </div>
 
-                <button className='filter-button' onClick={(ev) => handleClick(ev, 'empty')}>Limpiar filtro</button>
+                <button className='filter-button' onClick={(ev) => handleClick(ev, 'empty')}>Clear filters</button>
 
 
             </div>

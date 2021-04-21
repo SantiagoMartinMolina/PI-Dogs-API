@@ -57,6 +57,46 @@ export const StyledHome = styled.div`
         }
     }
 
+    .not-found{
+        background-color: #f8d8ba;
+        max-width: 500px;
+        width: 90%;
+        /* min-height: 300px; */
+        border-radius: 10px;
+        padding: 20px;
+        border: 2px solid var(--color);
+        margin: auto;
+        h1{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        i{
+            font-size: 45px;
+            color: var(--color);
+        }
+        p{
+            margin-bottom: 15px;
+        }
+
+        button{
+            color: var(--color);
+            background-color: #333;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 200ms ease;
+            margin-top: 5px;
+            font-size: 15px;
+            &:hover{
+                 font-weight: bold;
+                 background-color: black;
+                }
+            &:active{
+                transform: scale(0.95);
+                }
+        }
+    }
+
 @media (max-width: 900px){
     .container{
         margin-top: 70px;

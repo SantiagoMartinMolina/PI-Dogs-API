@@ -27,9 +27,9 @@ export default function CreateBreedModal({ showModal, setShowModal }) {
                     >
                         <div className='overlay'>
                             <h1><i class="far fa-check-circle"></i></h1>
-                            <p>Raza creada exitosamente.</p>
+                            <p>Breed created successfully</p>
 
-                            <button onClick={() => setShowModal({ ...showModal, created: false })}>Cerrar</button>
+                            <button onClick={() => setShowModal({ ...showModal, created: false })}>Ok</button>
                         </div>
                     </StyledCreateBreedModal>
                 </StyledOverlay>
@@ -51,9 +51,9 @@ export default function CreateBreedModal({ showModal, setShowModal }) {
                     >
                         <div className='overlay'>
                             <h1><span><i class="fas fa-exclamation"></i></span></h1>
-                            <p>Debe ingresar por lo menos 1 temperamento.</p>
+                            <p>You must select at least one temperament.</p>
 
-                            <button onClick={() => setShowModal({ ...showModal, temp: false })}>Cerrar</button>
+                            <button onClick={() => setShowModal({ ...showModal, temp: false })}>Ok</button>
                         </div>
                     </StyledCreateBreedModal>
                 </StyledOverlay>

@@ -109,7 +109,7 @@ function CreateBreed() {
             <CreateBreedModal setShowModal={setShowModal} showModal={showModal} />
             <div className='form'>
 
-                <h1>Crear raza</h1>
+                <h1>Create Breed</h1>
                 <form className='form-top' id='form-top' onSubmit={handleSubmit}>
 
                     <input
@@ -117,7 +117,7 @@ function CreateBreed() {
                         name='name'
                         type='text'
                         value={input.name}
-                        placeholder='name'
+                        placeholder='Name'
                         onChange={handleChange}
                     />
                     <input
@@ -125,7 +125,7 @@ function CreateBreed() {
                         name='weight'
                         type='number'
                         value={input.weight}
-                        placeholder='weight'
+                        placeholder='Weight'
                         onChange={handleChange}
                     />
                     <input
@@ -133,7 +133,7 @@ function CreateBreed() {
                         name='height'
                         type='number'
                         value={input.height}
-                        placeholder='height'
+                        placeholder='Height'
                         onChange={handleChange}
                     />
                     <input
@@ -141,12 +141,12 @@ function CreateBreed() {
                         name='life_span'
                         type='number'
                         value={input.life_span}
-                        placeholder='life span'
+                        placeholder='Life span'
                         onChange={handleChange}
                     />
 
                     <select onChange={handleChangeTemp} name="temperaments" value={selectedTemp}  >
-                        <option value=''>Seleccionar temperamentos</option>
+                        <option value=''>Select temperaments</option>
                         {
                             temps.map((t) => (
                                 <option value={t.id} key={t.id}>{t.name}</option>
@@ -161,15 +161,14 @@ function CreateBreed() {
                         }
                     </div>
 
-                    <input className='submit' type="submit" value='Crear' />
+                    <input className='submit' type="submit" value='Create' />
 
                 </form>
             </div>
 
             {/* <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=632&q=80" alt="" /> */}
 
-            <div className='img-container'>
-            </div>
+            <div className='img-container' />
 
 
         </StyledCreateBreed>

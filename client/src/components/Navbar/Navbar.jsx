@@ -7,7 +7,7 @@ export default function Navbar() {
         <StyledNav>
             <div className='container'>
                 <div className='title'>
-                    <p>Proyecto individual - Santiago Molina</p>
+                    <p>PI-Dogs - Santiago Molina</p>
                 </div>
                 <div className='social-media'>
                     <a href="https://www.linkedin.com/in/santiago-molina-dev/" target='_blank' rel='noopener noreferrer' ><i class="fab fa-linkedin"></i></a>
@@ -20,7 +20,7 @@ export default function Navbar() {
                             <NavLink exact to="/home" >Home</NavLink>
                         </li>
                         <li className="list-item">
-                            <NavLink exact to="/createBreed" >Crear raza</NavLink>
+                            <NavLink exact to="/createBreed" >Create breed</NavLink>
                         </li>
                         <li className="list-item">
                             <NavLink exact to="/about" >About</NavLink>
