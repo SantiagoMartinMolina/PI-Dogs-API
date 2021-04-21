@@ -111,7 +111,7 @@ function Home() {
         }
         return (
             <>
-                {title !== '' || filteredBreeds.length ? <p>{filtered.length} resultados</p> : null}
+                {(title !== '' || filteredBreeds.length) && filtered.length > 0 ? <p className='results'><i class="far fa-hand-point-down"></i>{filtered.length} {filtered.length > 1 ? 'results' : 'result'}</p> : null}
                 <div className='cards-container'>
                     {
                         displayBreeds.length > 0
@@ -167,7 +167,7 @@ function Home() {
                     {
 
                         loading
-                            ? <p>cargando</p> // HACER ESTO MAS LINDO
+                            ? <div className='loading'><i class="fas fa-spin fa-paw"></i> Loading...</div>
                             :
                             showNoResult
                                 ?

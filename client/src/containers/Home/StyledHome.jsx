@@ -3,6 +3,25 @@ import styled from 'styled-components';
 export const StyledHome = styled.div`
     padding-top: 100px;
 
+    .loading{
+        margin-top: 40px;
+            i{
+                font-size: 40px;
+
+            }
+    }
+
+    .results{
+        margin: 10px;
+        color: var(--color);
+        font-weight: bold;
+        i{
+            margin-right: 5px;
+            /* color: black; */
+            display: block;
+        }
+    }
+
     .container{
         display: flex;
         margin-top: 25px;
@@ -32,13 +51,14 @@ export const StyledHome = styled.div`
         justify-content: center; 
         align-items: center;
         flex-wrap: wrap;
-        min-height: 150px;
+        
         margin-bottom: 30px;
         padding: 20px;
 
         a{
+            display: inline-block;
             padding: 10px;
-            margin: 8px;
+            margin: 10px 8px;
             border-radius: 10px;
             border: 1px solid black;
             color: black;
@@ -61,11 +81,11 @@ export const StyledHome = styled.div`
         background-color: #f8d8ba;
         max-width: 500px;
         width: 90%;
-        /* min-height: 300px; */
         border-radius: 10px;
         padding: 20px;
         border: 2px solid var(--color);
-        margin: auto;
+        margin: 20px auto;
+
         h1{
             margin-top: 10px;
             margin-bottom: 5px;
@@ -133,7 +153,6 @@ export const StyledHome = styled.div`
 
 @media (max-width: 770px){
     .paginationButtons{
-        min-height: 200px;
     }
 
 }
