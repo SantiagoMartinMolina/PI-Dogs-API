@@ -2,7 +2,6 @@ const axios = require('axios');
 
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-// const { Breed } = require('./src/db.js');
 const { Temperament, Breed } = require('./src/db.js');
 
 

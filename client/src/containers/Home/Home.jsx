@@ -8,8 +8,14 @@ import Ordenador from '../../components/Ordenador/Ordenador';
 import ReactPaginate from 'react-paginate'
 import Modal from '../../components/Modal/Modal';
 import { setFiltered } from '../../Redux/Actions';
-// import { useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
+
+const variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+}
 
 function Home() {
     const [title, setTitle] = useState('');
@@ -24,24 +30,11 @@ function Home() {
     const filteredBreeds = useSelector(state => state.filteredBreeds);
     const loading = useSelector(state => state.loading);
 
-    // Pagination
-    // const [breeds, setBreeds] = useState(filteredBreeds.length > 0 ? filteredBreeds : breedsLoaded);
-    // const [breeds, setBreeds] = useState([]);
-
     const [pageNumber, setPageNumber] = useState(0);
 
     const breedsPerPage = 10;
     const pagesVisited = pageNumber * breedsPerPage;
 
-    // console.log('ESTO ES DISPLAYBREEDS', displayBreeds);
-
-    // useEffect(() => {
-    //     if (filteredBreeds.length > 0) {
-    //         setBreeds(filteredBreeds);
-    //     } else {
-    //         setBreeds(breedsLoaded);
-    //     }
-    // }, [filteredBreeds, breedsLoaded])
     const [forcedPage, setForcedPage] = useState(false)
 
     useEffect(() => {
@@ -66,7 +59,6 @@ function Home() {
         setShowNoResult(false);
 
         if (arrayTemps.length === 0) {
-            // filtered = breeds;
             dispatch(setFiltered([]));
             return
         }
@@ -110,8 +102,21 @@ function Home() {
         }
         return (
             <>
-                {(title !== '' || filteredBreeds.length) && filtered.length > 0 ? <p className='results'><i class="far fa-hand-point-down"></i>{filtered.length} {filtered.length > 1 ? 'results' : 'result'}</p> : null}
+                {
+                    (title !== '' || filteredBreeds.length) && filtered.length > 0
+                        ? <motion.p
+                            className='results'
+                            initial="hidden"
+                            animate="visible"
+                            variants={variants}
+                            transition={{ duration: 0.4 }}
+                        >
+                            <i class="far fa-hand-point-down"></i>{filtered.length} {filtered.length > 1 ? 'results' : 'result'}
+                        </motion.p>
+                        : null
+                }
                 <div className='cards-container'>
+
                     {
                         displayBreeds.length > 0
                             ?
@@ -119,7 +124,14 @@ function Home() {
                                 <Card key={breed.id} breed={breed} setShowModal={setShowModal} setShowBreed={setShowBreed} />
                             ))
                             :
-                            <div className='not-found'>
+                            <motion.div
+                                className='not-found'
+                                initial="hidden"
+                                animate="visible"
+                                variants={variants}
+                                transition={{ duration: 0.4 }}
+                                exit={{ opacity: 0 }}
+                            >
                                 <i class="fas fa-search"></i>
                                 <h1>No breeds found</h1>
                                 <p>Search for a different breed.</p>
@@ -127,9 +139,9 @@ function Home() {
                                     handleClick(ev, 'empty');
                                     setTitle('');
                                 }}>Try again</button>
-                            </div>
-                        //<p>No hayy</p> //HACER COMPONENTE MAS LINDO
+                            </motion.div>
                     }
+
                 </div>
                 <ReactPaginate
                     previousLabel={"Previous"}
@@ -151,17 +163,26 @@ function Home() {
         <StyledHome>
             <Modal showModal={showModal} setShowModal={setShowModal} breed={showBreed} />
             <div className='container'>
-                <div className='filtro'>
+                <motion.div
+                    className='filtro'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4 }}
+                >
 
                     <Ordenador />
                     <Filtro setShowNoResult={setShowNoResult} handleClick={handleClick} setArrayTemps={setArrayTemps} arrayTemps={arrayTemps} />
-                </div>
+                </motion.div>
 
                 <div className='cards'>
-                    <div className='buscador'>
+                    <motion.div
+                        className='buscador'
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.4 }}
+                    >
                         <Buscador setTitle={setTitle} title={title} />
-                    </div>
-                    {/* {console.log('ESTADO BREEDS', breeds)} */}
+                    </motion.div>
 
                     {
 
@@ -170,7 +191,14 @@ function Home() {
                             :
                             showNoResult
                                 ?
-                                <div className='not-found'>
+                                <motion.div
+                                    className='not-found'
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={variants}
+                                    transition={{ duration: 0.4 }}
+                                    exit={{ opacity: 0 }}
+                                >
                                     <i class="fas fa-search"></i>
                                     <h1>No breeds found</h1>
                                     <p>Select another temperament combination.</p>
@@ -178,7 +206,7 @@ function Home() {
                                         setTitle('');
                                         handleClick(ev, 'empty')
                                     }}>Try again</button>
-                                </div> // HACER COMPONENTE MAS LINDO
+                                </motion.div>
                                 :
                                 filteredBreeds.length > 0
                                     ? renderCards(filteredBreeds)

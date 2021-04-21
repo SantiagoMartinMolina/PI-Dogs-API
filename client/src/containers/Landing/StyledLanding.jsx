@@ -6,10 +6,6 @@ export const StyledLanding = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;    
-    /* display: flex; */
-    /* align-items: center;     */
-    /* justify-content: flex-start; */
-    /* padding: 0 200px; */
     position: relative;
 
     .container{

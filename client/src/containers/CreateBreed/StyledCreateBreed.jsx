@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const StyledCreateBreed = styled.div`
+export const StyledCreateBreed = styled(motion.div)`
     margin: 125px auto 30px;
     padding: 30px;
     display: flex;

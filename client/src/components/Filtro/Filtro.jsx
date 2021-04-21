@@ -3,9 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setFiltered } from '../../Redux/Actions';
 import { StyledFiltro } from './StyledFiltro';
 import axios from '../../axios';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
-
+const variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+}
 
 function Filtro({ setShowNoResult, arrayTemps, setArrayTemps, handleClick }) {
     const [temps, setTemps] = useState([]); //[{id: name:}]
@@ -99,14 +103,25 @@ function Filtro({ setShowNoResult, arrayTemps, setArrayTemps, handleClick }) {
                 </select>
                 <div className='temp-container'>
 
-                    {
-                        arrayTemps.map((t) => (
+                    <AnimatePresence>
+                        {
+                            arrayTemps.map((t) => (
 
-                            <p key={t}>{t} <button onClick={() => deleteTemp(t)}><i className="fas fa-times"></i></button></p>
+                                <motion.p
+                                    key={t}
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={variants}
+                                    transition={{ duration: 0.3 }}
+                                    exit={{ opacity: 0, x: -100 }}
+                                >
+                                    {t} <button onClick={() => deleteTemp(t)}><i className="fas fa-times"></i></button>
+                                </motion.p>
 
 
-                        ))
-                    }
+                            ))
+                        }
+                    </AnimatePresence>
                 </div>
 
                 <button className='filter-button' onClick={(ev) => handleClick(ev, 'empty')}>Clear filters</button>

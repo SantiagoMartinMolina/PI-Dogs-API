@@ -1,19 +1,20 @@
 import React from 'react';
 import { StyledCard } from './StyledCard';
-// import { useHistory } from 'react-router-dom';
 
-
+const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+}
 
 export default function Card({ breed, setShowModal, setShowBreed }) {
 
-    // const history = useHistory();
-
-    // function handleClick() {
-    //     history.push(`/dogs/${breed.id}`);
-    // }
-
     return (
         <StyledCard
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            transition={{ duration: 0.4 }}
+            exit={{ opacity: 0 }}
             onClick={() => {
                 setShowBreed(breed)
                 setShowModal(true)
@@ -27,11 +28,7 @@ export default function Card({ breed, setShowModal, setShowBreed }) {
             <div className='info'>
 
                 <div>
-                    {/* <Link to='/'> */}
                     <h2>{breed.name}</h2>
-
-                    {/* </Link> */}
-
                 </div>
 
                 <div className='temp-container'>

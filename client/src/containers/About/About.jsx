@@ -1,9 +1,19 @@
 import React from 'react';
 import { StyledAbout } from './StyledAbout';
 
+const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+}
+
 export default function About() {
     return (
-        <StyledAbout>
+        <StyledAbout
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            transition={{ duration: 0.4 }}
+        >
             <div className='about'>
                 <h1>PI-Dogs</h1>
                 <p>This project was created as part of my fullstack developer formation, while attending the <a href='https://www.soyhenry.com/' target='_blank' rel='noopener noreferrer'>Henry bootcamp</a>. In order to map all the different breeds, this app consumes data from <a href='https://thedogapi.com/' target='_blank' rel='noopener noreferrer'>the dogs API</a>. It is also possible to create a new dog breed, entering a name, weight, height, life span and temperaments.</p>

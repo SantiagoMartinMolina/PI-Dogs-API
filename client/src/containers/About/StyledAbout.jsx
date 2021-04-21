@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const StyledAbout = styled.div`
+export const StyledAbout = styled(motion.div)`
     margin: 125px auto 30px;
     padding: 25px;
     max-width: 800px;
@@ -77,7 +78,9 @@ export const StyledAbout = styled.div`
             font-size: 25px;
             border-right: 2px solid black;
         }
-        
+        a{
+            color: black;
+        }
     }
 
 @media (max-width: 900px){

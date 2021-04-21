@@ -4,8 +4,13 @@ import { useDispatch } from "react-redux";
 import { getBreeds } from '../../Redux/Actions/index';
 import axios from '../../axios';
 import CreateBreedModal from './CreateBreedModal';
+import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-
+const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+}
 
 function CreateBreed() {
 
@@ -25,7 +30,6 @@ function CreateBreed() {
 
 
     useEffect(() => {
-        // var idP= props.breeds[props.breeds.length-1].id;
         async function getTemps() {
             let t = (await axios.get('/temperament')).data;
             setTemps(t);
@@ -50,6 +54,7 @@ function CreateBreed() {
                     created: true
                 })
                 dispatch(getBreeds())
+
             }
         })
             .catch(() => {
@@ -60,7 +65,10 @@ function CreateBreed() {
             })
 
         setInput({
-            ...input,
+            name: '',
+            weight: '',
+            height: '',
+            life_span: '',
             temperaments: []
         });
 
@@ -105,7 +113,12 @@ function CreateBreed() {
     }
     return (
 
-        <StyledCreateBreed>
+        <StyledCreateBreed
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            transition={{ duration: 0.4 }}
+        >
             <CreateBreedModal setShowModal={setShowModal} showModal={showModal} />
             <div className='form'>
 
@@ -127,6 +140,7 @@ function CreateBreed() {
                         value={input.weight}
                         placeholder='Weight'
                         onChange={handleChange}
+                        min="1"
                     />
                     <input
                         required
@@ -135,6 +149,7 @@ function CreateBreed() {
                         value={input.height}
                         placeholder='Height'
                         onChange={handleChange}
+                        min="1"
                     />
                     <input
                         required
@@ -143,6 +158,7 @@ function CreateBreed() {
                         value={input.life_span}
                         placeholder='Life span'
                         onChange={handleChange}
+                        min="1"
                     />
 
                     <select onChange={handleChangeTemp} name="temperaments" value={selectedTemp}  >
@@ -154,11 +170,21 @@ function CreateBreed() {
                         }
                     </select>
                     <div className='temp-container'>
-                        {
-                            getNames(input.temperaments).map((t) => (
-                                <p key={t.id}>{t.name} <button onClick={() => deleteTemp(t.id)}><i className="fas fa-times"></i></button></p>
-                            ))
-                        }
+                        <AnimatePresence>
+                            {
+                                getNames(input.temperaments).map((t) => (
+                                    <motion.p
+                                        key={t.id}
+                                        initial={{ opacity: 0, y: -50 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        exit={{ opacity: 0, x: -100 }}
+                                    >
+                                        {t.name} <button onClick={() => deleteTemp(t.id)}><i className="fas fa-times"></i></button>
+                                    </motion.p>
+                                ))
+                            }
+                        </AnimatePresence>
                     </div>
 
                     <input className='submit' type="submit" value='Create' />

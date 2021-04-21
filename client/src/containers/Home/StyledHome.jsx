@@ -43,6 +43,7 @@ export const StyledHome = styled.div`
         justify-content: center;
         flex-wrap: wrap;
         /* padding: 40px; */
+        /* margin-top: 80px; */
     }
 
     .paginationButtons{
