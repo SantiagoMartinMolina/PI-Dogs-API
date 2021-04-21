@@ -8,7 +8,6 @@ import Ordenador from '../../components/Ordenador/Ordenador';
 import ReactPaginate from 'react-paginate'
 import Modal from '../../components/Modal/Modal';
 import { setFiltered } from '../../Redux/Actions';
-import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 
 
