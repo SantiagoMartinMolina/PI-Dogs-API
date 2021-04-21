@@ -16,7 +16,7 @@ export default function About() {
         >
             <div className='about'>
                 <h1>PI-Dogs</h1>
-                <p>This project was created as part of my fullstack developer formation, while attending the <a href='https://www.soyhenry.com/' target='_blank' rel='noopener noreferrer'>Henry bootcamp</a>. In order to map all the different breeds, this app consumes data from <a href='https://thedogapi.com/' target='_blank' rel='noopener noreferrer'>the dogs API</a>. It is also possible to create a new dog breed, entering a name, weight, height, life span and temperaments.</p>
+                <p>This project was created as part of my fullstack developer education at <a href='https://www.soyhenry.com/' target='_blank' rel='noopener noreferrer'>Henry bootcamp</a>. In order to map all the different breeds, this app consumes data from <a href='https://thedogapi.com/' target='_blank' rel='noopener noreferrer'>the dogs API</a>. It is also possible to create a new dog breed, entering a name, weight, height, life span and temperaments.</p>
                 <p>Any feedback you can provide will be greatly appreciated. Thank you, and don't forget to create your own breed!</p>
             </div>
             <h1 className='tech-title'>Used technologies:</h1>
