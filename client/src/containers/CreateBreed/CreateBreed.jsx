@@ -55,7 +55,13 @@ function CreateBreed() {
                     created: true
                 })
                 dispatch(getBreeds())
-
+                setInput({
+                    name: '',
+                    weight: '',
+                    height: '',
+                    life_span: '',
+                    temperaments: []
+                });
             }
         })
             .catch(() => {
@@ -64,15 +70,6 @@ function CreateBreed() {
                     temp: true
                 })
             })
-
-        setInput({
-            name: '',
-            weight: '',
-            height: '',
-            life_span: '',
-            temperaments: []
-        });
-
     };
 
     const handleChangeTemp = (ev) => {
