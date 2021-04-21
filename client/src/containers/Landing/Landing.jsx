@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledLanding } from './StyledLanding';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 export default function Landing() {
@@ -8,10 +8,10 @@ export default function Landing() {
     return (
         <StyledLanding>
             <div className='container'>
-                <h1>Proyecto dogs</h1>
-                <NavLink exact to="/home">Ingresar</NavLink>
+                <h1>PI-Dogs</h1>
+                <NavLink exact to="/home">Enter</NavLink>
             </div>
-            
+
         </StyledLanding>
     )
 }
